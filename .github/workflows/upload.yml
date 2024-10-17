@@ -1,0 +1,20 @@
+name: Package and Release
+
+on: [push, pull_request]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Zip folder
+        run: zip -r release.zip rk3588
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
