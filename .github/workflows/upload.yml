@@ -10,12 +10,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Zip folder
-        run: zip -r release.zip rk3588
+        run: zip -r rk3588.zip rk3588
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
           tag: latest
-          files: release.zip
+          files: rk3588.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
