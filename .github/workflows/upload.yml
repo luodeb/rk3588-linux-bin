@@ -15,7 +15,7 @@ jobs:
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          tag: latest
+          tag_name: latest
           files: rk3588.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
